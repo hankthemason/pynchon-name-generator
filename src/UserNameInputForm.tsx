@@ -2,16 +2,13 @@ import React, { useState, Dispatch, SetStateAction } from 'react'
 import { useEffect } from 'react-dom/node_modules/@types/react'
 
 interface Props {
-  pageState: any;
-  setPageState: any;
+  pageState: PageState,
+  setPageState: Dispatch<SetStateAction<PageState>>
 }
 
 export const UserNameInputForm = ({ pageState, setPageState }: Props) => {
-
-  let { makeName, resultHidden } = pageState
+  console.log(setPageState)
   const [inputText, setInputText] = useState<string>('')
-
-  
   
   return (
     <form>
@@ -25,10 +22,11 @@ export const UserNameInputForm = ({ pageState, setPageState }: Props) => {
         value={inputText}
         onClick={e => {
           e.preventDefault()
-          if (resultHidden === true) {
-            pageState.resultHidden = false
-          }
-          pageState.makeName = true
+          setPageState({
+            ...pageState,
+            resultHidden: false,
+            result: inputText
+          })
         }}
       >
         submit

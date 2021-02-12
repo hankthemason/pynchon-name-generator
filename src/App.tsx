@@ -5,49 +5,47 @@ import { Result } from './Result'
 import { GenName } from './GenerateName'
 import { FetchJson } from './FetchJson'
 
-interface PageState {
-  makeName: boolean;
-  resultHidden: boolean;
-}
-
 function App() {
 
-  const [pageState, setPageState] = useState<PageState>()
-
-  useEffect(() => {
-    setPageState({
-      makeName: false,
-      resultHidden: true
-    })
-  }, [])
-
-  const generateName: GenerateName = GenName
+  let generateName: GenerateName = GenName
+  
+  const [characterList, setCharacterList] = useState<any>()
+  const [pageState, setPageState] = useState<PageState>({
+    result: '',
+    resultHidden: true,
+    name: ''
+  })
 
   useEffect(() => {
     FetchJson('characters')
     .then(result => {
-      console.log(result)
+      setCharacterList(result)
     })
     .catch(error => {
-      /* show error message */
+      console.error(error)
     })
   }, [])
+
+  useEffect(() => {
+    if (characterList != undefined) {
+      setPageState({
+        ...pageState,
+        name: generateName(characterList)
+      })
+    }
+  }, [pageState.result])
   
   return (
-    pageState ?
     <div>
       welcome to the Thomas Pynchon name generator
       <br></br>
       enter your name:
-      <UserNameInputForm 
-        pageState={pageState}
-        setPageState={setPageState}
+      <UserNameInputForm pageState={pageState} setPageState={setPageState}/>
+      <Result 
+        pageState={pageState} 
+        setPageState={setPageState} 
       />
-      <Result
-        pageState={pageState}
-        setPageState={setPageState}
-        generateName={generateName}/>
-    </div> : null
+    </div>
   )
 }
 
