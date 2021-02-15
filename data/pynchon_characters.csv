@@ -1,82 +1,78 @@
-first_name,last_name,sex,book
-Oedipa ,Maas,F,The Crying of Lot 49
-Mucho,Maas,M,The Crying of Lot 49
- ,Hilarius,M,The Crying of Lot 49
-Randy,Driblette,M,The Crying of Lot 49
-Mike,Fallopian,M,The Crying of Lot 49
-Gengis,Cohen,M,The Crying of Lot 49
-Benny,Profane,M,V
-Rachel,Owlglass,F,V
-Herbert,Stencil,M,V
-Clayton,Chiclitz,M,V
-Slab,,M,V
-Mafia,Winsome,M,V
-McClintic,Sphere,M,V
-Ferguson,Mixolydian,M,V
-Pig,Bodine,M,V
-Tyrone,Slothrop,M,Gravity's Rainbow
-Captain,Blicero,M,Gravity's Rainbow
-Horst,Achtfaden,M,Gravity's Rainbow
-Lyle,Bland,M,Gravity's Rainbow
-Teddy,Bloat,M,Gravity's Rainbow
-Seaman,Bodine,M,Gravity's Rainbow
-Säure ,Bummer,M,Gravity's Rainbow
-Milton,Gloaming,M,Gravity's Rainbow
-Roger,Mexico,M,Gravity's Rainbow
-Brigadier,Pudding,M,Gravity's Rainbow
-Mrs.,Quoad,F,Gravity's Rainbow
-Schnorp,,M,Gravity's Rainbow
-Edwin,Treacle,M,Gravity's Rainbow
-Stefan,Utgarthaloki,M,Gravity's Rainbow
-Richard,Zhlubb,M,Gravity's Rainbow
-Zoyd,Wheeler,M,Vineland
-Brock,Vond,M,Vineland
-Wicks,Cherrycoke,M,Mason & Dixon
-Chick,Counterfly,M,Against The Day
-Darby,Suckling,M,Against The Day
-Randolph,St. Cosmo,M,Against The Day
-Ruperta,Chirpingden-Groin,F,Against The Day
-Sloat,Fresno,M,Against The Day
-Yashmeen ,Halfcourt,F,Against The Day
-Kieselguhr ,Kid,M,Against The Day
-Deuce,Kindred,M,Against The Day
-Cyprian,Latewood,M,Against The Day
-Hunter,Penhallow,M,Against The Day
-Colfax,Vibe,M,Against The Day
-Lionel,Swome,M,Against The Day
-Shasta,Fay,F,Inherent Vice
-Puck,Beaverton,M,Inherent Vice
-Bigfoot,Bjornsen,M,Inherent Vice
-Rudy,Blatnoyd,M,Inherent Vice
-Fritz,Drybeam,M,Inherent Vice
-Trillium,Fortnight,M,Inherent Vice
-Rhus,Frothingham,M,Inherent Vice
-Amethyst,Harlingen,F,Inherent Vice
-Sauncho,Smilax,M,Inherent Vice
-Boris,Spivey,M,Inherent Vice
-Doc,Sportello,M,Inherent Vice
-Jason,Velveeta,M,Inherent Vice
-Tito,Stavrou,M,Inherent Vice
-Burke,Stodger,M,Inherent Vice
-Riggs,Warbling,M,Inherent Vice
-Zigzag,Twong,M,Inherent Vice
-Zirconia,,F,Inherent Vice
-Farley,Branch,M,Inherent Vice
-Hugo,Borderline,M,Inherent Vice
-Chlorinda,,F,Inherent Vice
-Clancy,Charlock,M,Inherent Vice
-Scott,Oof,M,Inherent Vice
-Smedley,,M,Inherent Vice
-Art,Tweedle,M,Inherent Vice
-Leonard,Loosemeat,M,Inherent Vice
-Ensendada,Slim,M,Inherent Vice
-Petunia,Leeway,F,Inherent Vice
-Buddy,Tubside,M,Inherent Vice
-Vyrva,McElmo,F,Bleeding Edge
-Eric,Outfield,M,Bleeding Edge
-Horst,Loeffler,M,Bleeding Edge
-Reg,Despard,M,Bleeding Edge
-Phipps,Boïngueaux,M,Bleeding Edge
-Rockwell,Slagiatt,M,Bleeding Edge
-Lester,Traipse,M,Bleeding Edge
-Meatball,Mulligan,M,Slow Learner
+first_name,strange_first,last_name,strange_last,book
+Oedipa ,1,Maas,1,The Crying of Lot 49
+Wendell,0,Maas,1,The Crying of Lot 49
+ ,,Hilarius,1,The Crying of Lot 49
+Randy,0,Driblette,1,The Crying of Lot 49
+Mike,0,Fallopian,1,The Crying of Lot 49
+Gengis,1,Cohen,0,The Crying of Lot 49
+Benny,0,Profane,1,V
+Rachel,0,Owlglass,1,V
+Herbert,0,Stencil,1,V
+Clayton,0,Chiclitz,1,V
+Slab,1,,,V
+Mafia,1,Winsome,1,V
+McClintic,1,Sphere,1,V
+Ferguson,0,Mixolydian,1,V
+Pig,1,Bodine,1,V
+,,Porpentine,1,V
+,,Bongo-Shaftsbury,1,V
+Tyrone,0,Slothrop,1,Gravity's Rainbow
+Horst,0,Achtfaden,1,Gravity's Rainbow
+Lyle,0,Bland,1,Gravity's Rainbow
+Teddy,0,Bloat,1,Gravity's Rainbow
+Seaman,1,Bodine,1,Gravity's Rainbow
+Säure ,0,Bummer,1,Gravity's Rainbow
+Milton,0,Gloaming,1,Gravity's Rainbow
+Roger,0,Mexico,1,Gravity's Rainbow
+Brigadier,0,Pudding,1,Gravity's Rainbow
+Mrs.,0,Quoad,1,Gravity's Rainbow
+Schnorp,1,,,Gravity's Rainbow
+Edwin,0,Treacle,1,Gravity's Rainbow
+Stefan,0,Utgarthaloki,1,Gravity's Rainbow
+Richard,0,Zhlubb,1,Gravity's Rainbow
+Zoyd,1,Wheeler,0,Vineland
+Brock,0,Vond,1,Vineland
+Wicks,1,Cherrycoke,1,Mason & Dixon
+Chick,0,Counterfly,1,Against The Day
+Darby,0,Suckling,1,Against The Day
+Randolph,0,St. Cosmo,1,Against The Day
+Ruperta,1,Chirpingden-Groin,1,Against The Day
+Sloat,1,Fresno,0,Against The Day
+Yashmeen ,0,Halfcourt,1,Against The Day
+Kieselguhr ,1,Kid,0,Against The Day
+Deuce,1,Kindred,0,Against The Day
+Cyprian,1,Latewood,1,Against The Day
+Hunter,0,Penhallow,1,Against The Day
+Colfax,0,Vibe,1,Against The Day
+Lionel,0,Swome,1,Against The Day
+Shasta,1,Fay,0,Inherent Vice
+Puck,0,Beaverton,1,Inherent Vice
+Bigfoot,1,Bjornsen,0,Inherent Vice
+Rudy,0,Blatnoyd,1,Inherent Vice
+Fritz,1,Drybeam,1,Inherent Vice
+Trillium,1,Fortnight,1,Inherent Vice
+Rhus,1,Frothingham,1,Inherent Vice
+Amethyst,1,Harlingen,0,Inherent Vice
+Sauncho,1,Smilax,0,Inherent Vice
+Doc,1,Sportello,1,Inherent Vice
+Jason,0,Velveeta,1,Inherent Vice
+Tito,1,Stavrou,0,Inherent Vice
+Riggs,0,Warbling,1,Inherent Vice
+Zigzag,1,Twong,0,Inherent Vice
+Zirconia,1,,,Inherent Vice
+Hugo,0,Borderline,1,Inherent Vice
+Chlorinda,1,,,Inherent Vice
+Scott,0,Oof,1,Inherent Vice
+Smedley,1,,,Inherent Vice
+Art,0,Tweedle,1,Inherent Vice
+Leonard,0,Loosemeat,1,Inherent Vice
+Ensendada,1,Slim,0,Inherent Vice
+Petunia,1,Leeway,1,Inherent Vice
+Buddy,0,Tubside,1,Inherent Vice
+Vyrva,1,McElmo,1,Bleeding Edge
+Eric,0,Outfield,1,Bleeding Edge
+Horst,1,Loeffler,0,Bleeding Edge
+Phipps,0,Boïngueaux,1,Bleeding Edge
+Rockwell,0,Slagiatt,1,Bleeding Edge
+Lester,0,Traipse,1,Bleeding Edge
+Meatball,1,Mulligan,0,Slow Learner

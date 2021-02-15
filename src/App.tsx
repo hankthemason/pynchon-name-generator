@@ -3,6 +3,7 @@ import './App.css';
 import { UserNameInputForm } from './UserNameInputForm'
 import { Result } from './Result'
 import { GenName } from './GenerateName'
+import { ErrorMessage } from './ErrorMessage'
 import { FetchJson } from './FetchJson'
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
     userName: '',
     resultHidden: true,
     result: '',
-    clicked: false
+    clicked: false,
+    showError: false
   })
 
   useEffect(() => {
@@ -26,20 +28,19 @@ function App() {
       console.error(error)
     })
   }, [])
-  console.log(pageState)
 
   useEffect(() => {
-    if (characterList != undefined) {
+  
+    if (characterList && pageState.clicked === true) {
       setPageState({
         ...pageState,
-        result: generateName(characterList),
+        result: generateName(pageState.userName, characterList),
         clicked: false
       })
     }
     
   }, [pageState.clicked])
   
-  console.log(pageState)
   return (
     <div>
       welcome to the Thomas Pynchon name generator
@@ -50,6 +51,9 @@ function App() {
         pageState={pageState} 
         setPageState={setPageState} 
       />
+      {pageState.showError === true ? (
+        <ErrorMessage />
+      ): null}
     </div>
   )
 }

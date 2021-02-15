@@ -1,5 +1,5 @@
 import React, { useState, Dispatch, SetStateAction } from 'react'
-import { useEffect } from 'react-dom/node_modules/@types/react'
+import { ValidateForm } from './ValidateForm'
 
 interface Props {
   pageState: PageState,
@@ -16,19 +16,28 @@ export const UserNameInputForm = ({ pageState, setPageState }: Props) => {
         type="text" 
         value={inputText} 
         onChange={e => {setInputText(e.target.value)}}
+        placeholder={"your name"}
       />
       <button
         type="submit"
         value={inputText}
         onClick={e => {
           e.preventDefault()
-          
+          if (ValidateForm(inputText)) {
             setPageState({
               ...pageState,
               userName: inputText,
               resultHidden: false, 
-              clicked: true
+              clicked: true,
+              showError: false
             })
+          } else {
+            setPageState({
+              ...pageState,
+              resultHidden: true,
+              showError: true
+            })
+          }
         }}
       >
         submit
