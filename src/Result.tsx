@@ -7,15 +7,13 @@ interface Props {
 
 export const Result = ( { pageState, setPageState}: Props) => {
 
-  let { result, resultHidden, name } = pageState
+  let { result, resultHidden, userName } = pageState
   let [newName, setNewName] = useState()
-  
-  
   
   return (
     resultHidden === false ? (
       <div>
-        your name is: {name}
+        your name is: {result}
       </div>
     ) : null
   )

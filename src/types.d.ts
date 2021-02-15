@@ -1,7 +1,8 @@
 interface PageState {
-  result: string;
+  userName: string;
   resultHidden: boolean;
-  name: string;
+  result: string;
+  clicked: boolean;
 }
 
 type ShowResult = (value: boolean) => void;

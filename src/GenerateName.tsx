@@ -10,6 +10,7 @@ export const GenName = (names: []) => {
   const num: number = Math.floor(Math.random() * names.length)
   const name: any = names[num]
   const stringResult = `${name.first_name} ${name.last_name}`
+  console.log(stringResult)
   return stringResult
 
 }

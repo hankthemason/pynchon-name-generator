@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const UserNameInputForm = ({ pageState, setPageState }: Props) => {
-  console.log(setPageState)
+
   const [inputText, setInputText] = useState<string>('')
   
   return (
@@ -22,11 +22,13 @@ export const UserNameInputForm = ({ pageState, setPageState }: Props) => {
         value={inputText}
         onClick={e => {
           e.preventDefault()
-          setPageState({
-            ...pageState,
-            resultHidden: false,
-            result: inputText
-          })
+          
+            setPageState({
+              ...pageState,
+              userName: inputText,
+              resultHidden: false, 
+              clicked: true
+            })
         }}
       >
         submit

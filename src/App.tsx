@@ -11,9 +11,10 @@ function App() {
   
   const [characterList, setCharacterList] = useState<any>()
   const [pageState, setPageState] = useState<PageState>({
-    result: '',
+    userName: '',
     resultHidden: true,
-    name: ''
+    result: '',
+    clicked: false
   })
 
   useEffect(() => {
@@ -25,16 +26,20 @@ function App() {
       console.error(error)
     })
   }, [])
+  console.log(pageState)
 
   useEffect(() => {
     if (characterList != undefined) {
       setPageState({
         ...pageState,
-        name: generateName(characterList)
+        result: generateName(characterList),
+        clicked: false
       })
     }
-  }, [pageState.result])
+    
+  }, [pageState.clicked])
   
+  console.log(pageState)
   return (
     <div>
       welcome to the Thomas Pynchon name generator
