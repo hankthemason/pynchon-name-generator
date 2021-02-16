@@ -1,6 +1,3 @@
-import React, { useEffect } from 'react';
-import { HighlightSpanKind } from 'typescript';
-
 const cleanName = (name: string): string => {
   return name.slice(0, 1).toUpperCase().concat(name.slice(1, name.length).toLowerCase())
 }
@@ -8,6 +5,12 @@ const cleanName = (name: string): string => {
 const hasNickname = (probDenominator: number, nicknames: Nickname []): string | null => {
   if (Math.floor(Math.random() * probDenominator) < 1) {
     return nicknames[Math.floor(Math.random() * nicknames.length)].nickname
+  } else return null
+}
+
+const hasPrefix = (probDenominator: number, prefixes: Prefix []): string | null => {
+  if (Math.floor(Math.random() * probDenominator) < 1) {
+    return prefixes[Math.floor(Math.random() * prefixes.length)].prefix
   } else return null
 }
 
@@ -40,8 +43,17 @@ export const GenName = (input: string, nameData: NameData) => {
     inputSplit[i] = cleanName(inputSplit[i])
   }
 
-  let nickname = hasNickname(5, nicknames)
-  console.log(nickname)
+  let probDenominator = 5
+
+  let nickname = hasNickname(probDenominator, nicknames)
+  let prefix = hasPrefix(probDenominator, prefixes)
+
+  //can't have both nickname and prefix
+  if (nickname && prefix) {
+    let nicknameOrPrefix: number = Math.floor(Math.random() * 2)
+    //if 0, keep nickname, else keep prefix
+    nicknameOrPrefix === 0 ? prefix = null : nickname = null
+  }
   
   //if the user has supplied first and last name
   if (inputSplit.length > 1) {
@@ -63,6 +75,19 @@ export const GenName = (input: string, nameData: NameData) => {
     result = `${inputSplit[0]} ${getRandomName(1, names)}`
   }
   
-  return result
+  //if nickname or prefix, add it to name
+  if (nickname) {
+    let arr = result.split(' ')
+    arr.splice(1, 0, `"${nickname}"`)
+    result = arr.join(' ')
+    return result
+  } else if (prefix) {
+    let arr = result.split(' ')
+    arr.splice(0, 0, `${prefix}`)
+    result = arr.join(' ')
+    return result
+  } else {
+    return result
+  }
 
 }
