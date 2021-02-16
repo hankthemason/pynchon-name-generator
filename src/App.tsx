@@ -4,13 +4,16 @@ import { UserNameInputForm } from './UserNameInputForm'
 import { Result } from './Result'
 import { GenName } from './GenerateName'
 import { ErrorMessage } from './ErrorMessage'
-import { FetchJson } from './FetchJson'
+import { FetchCharacterNames, FetchNicknames, FetchPrefixes, FetchJSON, FetchMultiple } from './API'
+
+const filenames:Filenames = ['characters', 'nicknames', 'prefixes']
 
 function App() {
 
   let generateName: GenerateName = GenName
   
-  const [characterList, setCharacterList] = useState<any>()
+  const [nameData, setNameData] = useState<NameData>()
+
   const [pageState, setPageState] = useState<PageState>({
     userName: '',
     resultHidden: true,
@@ -19,26 +22,25 @@ function App() {
     showError: false
   })
 
+  //On page render, fetch all character names, nicknames, and prefixes
   useEffect(() => {
-    FetchJson('characters')
-    .then(result => {
-      setCharacterList(result)
-    })
+    FetchMultiple(filenames)
+    .then(result => setNameData(result))
     .catch(error => {
       console.error(error)
     })
   }, [])
 
   useEffect(() => {
-  
-    if (characterList && pageState.clicked === true) {
+
+    if (nameData && pageState.clicked === true) {
       setPageState({
         ...pageState,
-        result: generateName(pageState.userName, characterList),
+        result: generateName(pageState.userName, nameData),
         clicked: false
       })
     }
-    
+
   }, [pageState.clicked])
   
   return (

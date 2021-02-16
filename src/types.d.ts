@@ -11,10 +11,25 @@ interface CharacterName {
   strange_first: number;
   last_name: string;
   strange_last: number;
-  sex: string;
   book: string;
 }
 
+interface Nickname {
+  nickname: string;
+}
+
+interface Prefix {
+  prefix: string;
+}
+
+interface NameData  {
+  characters: CharacterName [];
+  nicknames: Nickname [];
+  prefixes: Prefix [];
+}
+
+type Filenames = ['characters', 'nicknames', 'prefixes']
+
 type ShowResult = (value: boolean) => void;
 type SetResult = (value: string) => void;
-type GenerateName = (input: string, names: []) => string;
+type GenerateName = (input: string, NameData) => string;
