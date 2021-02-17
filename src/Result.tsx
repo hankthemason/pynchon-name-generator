@@ -13,7 +13,7 @@ export const Result = ( { pageState, setPageState}: Props) => {
   return (
     resultHidden === false ? (
       <div>
-        your name is: {result}
+        your name is: <strong>{result}</strong>
       </div>
     ) : null
   )

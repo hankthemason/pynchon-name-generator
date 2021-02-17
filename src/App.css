@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  font-family:'Courier New', Courier, monospace;
+}
+
+.page-container * {
+  margin: 1rem 0;
+}
+
+.welcome {
+  margin-top: 5rem;
+  font-size: 25px;
+  text-align: center; 
+}
+
+.user-input {
+  margin: .1rem;
+  text-align: center;
+}
+
+
+#input {
+  margin-right: .1rem;
+}

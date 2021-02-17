@@ -12,7 +12,8 @@ export const UserNameInputForm = ({ pageState, setPageState }: Props) => {
   
   return (
     <form>
-      <input 
+      <input
+        id="input" 
         type="text" 
         value={inputText} 
         onChange={e => {setInputText(e.target.value)}}

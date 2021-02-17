@@ -44,18 +44,21 @@ function App() {
   }, [pageState.clicked])
   
   return (
-    <div>
-      welcome to the Thomas Pynchon name generator
-      <br></br>
-      enter your name:
-      <UserNameInputForm pageState={pageState} setPageState={setPageState}/>
-      <Result 
-        pageState={pageState} 
-        setPageState={setPageState} 
-      />
-      {pageState.showError === true ? (
-        <ErrorMessage />
-      ): null}
+    <div className='page-container'>
+      <div className='welcome'>
+        welcome to the Thomas Pynchon name generator
+      </div>
+      <div className='user-input'>
+        enter your name:
+        <UserNameInputForm pageState={pageState} setPageState={setPageState}/>
+        <Result 
+          pageState={pageState} 
+          setPageState={setPageState} 
+        />
+        {pageState.showError === true ? (
+          <ErrorMessage />
+        ): null}
+      </div>
     </div>
   )
 }
