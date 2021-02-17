@@ -64,3 +64,8 @@ body {
 #input {
   margin-right: .1rem;
 }
+
+.form {
+  margin-top: 0;
+  margin-bottom: 0;
+}

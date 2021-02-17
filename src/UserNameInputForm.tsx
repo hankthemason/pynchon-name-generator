@@ -11,7 +11,7 @@ export const UserNameInputForm = ({ pageState, setPageState }: Props) => {
   const [inputText, setInputText] = useState<string>('')
   
   return (
-    <form>
+    <form className='form'>
       <input
         id="input" 
         type="text" 
