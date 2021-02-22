@@ -12,8 +12,10 @@ export const Result = ( { pageState, setPageState}: Props) => {
   
   return (
     resultHidden === false ? (
-      <div>
-        your name is: <strong>{result}</strong>
+      <div className='result-name'>
+        your Pynchon name is: 
+        <br></br>
+        <strong>{result}</strong>
       </div>
     ) : null
   )

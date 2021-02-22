@@ -69,3 +69,9 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.result-name {
+  margin-right: 2rem;
+  margin-left: 2rem;
+  text-align: center;
+}
