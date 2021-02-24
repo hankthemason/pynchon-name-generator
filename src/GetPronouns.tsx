@@ -1,4 +1,5 @@
 export const GetPronouns = (userInput: string): {} => {
+  userInput = userInput.toLowerCase()
   
   let pronounsObj: PronounsObj = {
     subjective: '',
