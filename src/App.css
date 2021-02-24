@@ -75,3 +75,8 @@ body {
   margin-left: 2rem;
   text-align: center;
 }
+
+.description {
+  margin-right: 20%;
+  margin-left: 20%;
+}

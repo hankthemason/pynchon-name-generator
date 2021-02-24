@@ -1,48 +1,49 @@
-import React, { useState, Dispatch, SetStateAction } from 'react'
-import { ValidateForm } from './ValidateForm'
+import { useState } from 'react'
+import { ValidateName } from './Validators'
 
-interface Props {
-  pageState: PageState,
-  setPageState: Dispatch<SetStateAction<PageState>>
-}
 
-export const UserNameInputForm = ({ pageState, setPageState }: Props) => {
+export const UserNameInputForm = ({ pageState, setPageState }: UserNameInputFormProps) => {
 
   const [inputText, setInputText] = useState<string>('')
   
   return (
-    <form className='form'>
-      <input
-        id="input" 
-        type="text" 
-        value={inputText} 
-        onChange={e => {setInputText(e.target.value)}}
-        placeholder={"your name"}
-      />
-      <button
-        type="submit"
-        value={inputText}
-        onClick={e => {
-          e.preventDefault()
-          if (ValidateForm(inputText)) {
-            setPageState({
-              ...pageState,
-              userName: inputText,
-              resultHidden: false, 
-              clicked: true,
-              showError: false
-            })
-          } else {
-            setPageState({
-              ...pageState,
-              resultHidden: true,
-              showError: true
-            })
-          }
-        }}
-      >
-        submit
-      </button>
-    </form>
+    <div>
+      enter your name:
+    
+      <form className='form'>
+        <input
+          id="nameInput" 
+          type="text" 
+          value={inputText} 
+          onChange={e => {setInputText(e.target.value)}}
+          placeholder={"your name"}
+        />
+        <button
+          type="submit"
+          value={inputText}
+          onClick={e => {
+            e.preventDefault()
+            if (ValidateName(inputText)) {
+              setPageState({
+                ...pageState,
+                userName: inputText,
+                resultHidden: false,
+                descriptionButtonHidden: false,
+                nameClicked: true,
+                showNameError: false
+              })
+            } else {
+              setPageState({
+                ...pageState,
+                resultHidden: true,
+                showNameError: true
+              })
+            }
+          }}
+        >
+          submit
+        </button>
+      </form>
+    </div>
   )
 }

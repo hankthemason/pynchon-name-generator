@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from 'react'
-
 interface Props {
   pageState: any;
   setPageState: any;
@@ -7,8 +5,7 @@ interface Props {
 
 export const Result = ( { pageState, setPageState}: Props) => {
 
-  let { result, resultHidden, userName } = pageState
-  let [newName, setNewName] = useState()
+  let { result, resultHidden } = pageState
   
   return (
     resultHidden === false ? (

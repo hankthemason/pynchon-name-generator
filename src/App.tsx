@@ -4,25 +4,39 @@ import { UserNameInputForm } from './UserNameInputForm'
 import { Result } from './Result'
 import { GenName } from './GenerateName'
 import { ErrorMessage } from './ErrorMessage'
-import { FetchCharacterNames, FetchNicknames, FetchPrefixes, FetchJSON, FetchMultiple } from './API'
+import { FetchMultiple } from './API'
+import { GetDescription } from './GetDescription'
+import { GenerateDescription } from './GenerateDescription'
+import { Description } from './Description'
 
 const filenames:Filenames = ['characters', 'nicknames', 'prefixes']
 
 function App() {
 
   let generateName: GenerateName = GenName
+  let generateDescription = GenerateDescription;
   
   const [nameData, setNameData] = useState<NameData>()
+  const [descriptionData, setDescriptionData] = useState('yo')
 
   const [pageState, setPageState] = useState<PageState>({
     userName: '',
+    userPronouns: null,
     resultHidden: true,
+    descriptionButtonHidden: true,
+    pronounsHidden: true,
+    descriptionHidden: true,
     result: '',
-    clicked: false,
-    showError: false
+    nameClicked: false,
+    showNameError: false,
+    showPronounsError: false,
+    description: '',
+    descriptionClicked: false,
+
   })
 
-  //On page render, fetch all character names, nicknames, and prefixes
+  //On page render, fetch all character names, nicknames, and prefixes (nameData)
+  //Also fetch description data
   useEffect(() => {
     FetchMultiple(filenames)
     .then(result => setNameData(result))
@@ -31,17 +45,31 @@ function App() {
     })
   }, [])
 
+  //generate name
   useEffect(() => {
 
-    if (nameData && pageState.clicked === true) {
+    if (nameData && pageState.nameClicked === true) {
       setPageState({
         ...pageState,
         result: generateName(pageState.userName, nameData),
-        clicked: false
+        nameClicked: false
       })
     }
 
-  }, [pageState.clicked])
+  }, [pageState.nameClicked])
+
+  //generate description
+  useEffect(() => {
+
+    if (descriptionData && pageState.userPronouns && pageState.descriptionClicked === true) {
+      setPageState({
+        ...pageState,
+        description: generateDescription(pageState.result, pageState.userPronouns, descriptionData),
+        descriptionClicked: false
+      })
+    }
+
+  }, [pageState.descriptionClicked])
   
   return (
     <div className='page-container'>
@@ -49,15 +77,16 @@ function App() {
         welcome to the Thomas Pynchon name generator
       </div>
       <div className='user-input'>
-        enter your name:
         <UserNameInputForm pageState={pageState} setPageState={setPageState}/>
-        <Result 
-          pageState={pageState} 
-          setPageState={setPageState} 
-        />
-        {pageState.showError === true ? (
-          <ErrorMessage />
+        <Result pageState={pageState} setPageState={setPageState} />
+        {pageState.showNameError === true ? (
+          <ErrorMessage error='name'/>
         ): null}
+        <GetDescription pageState={pageState} setPageState={setPageState}/>
+        {pageState.showPronounsError === true ? (
+          <ErrorMessage error='pronouns'/>
+        ): null}
+        <Description pageState={pageState} setPageState={setPageState}/>
       </div>
     </div>
   )
