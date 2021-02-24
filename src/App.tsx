@@ -47,20 +47,31 @@ function App() {
 
   //generate name
   useEffect(() => {
-
     if (nameData && pageState.nameClicked === true) {
-      setPageState({
-        ...pageState,
-        result: generateName(pageState.userName, nameData),
-        nameClicked: false
-      })
+      if (pageState.descriptionHidden === true) {
+        setPageState({
+          ...pageState,
+          result: generateName(pageState.userName, nameData),
+          nameClicked: false
+        })
+      } else {
+        //the case where a description has already been generated and the user is changing their name
+        setPageState({
+          ...pageState,
+          result: generateName(pageState.userName, nameData),
+          nameClicked: false,
+          descriptionHidden: true,
+          pronounsHidden: true,
+          userPronouns: null,
+          description: '',
+        })
+      }
     }
 
   }, [pageState.nameClicked])
 
   //generate description
   useEffect(() => {
-
     if (descriptionData && pageState.userPronouns && pageState.descriptionClicked === true) {
       setPageState({
         ...pageState,
