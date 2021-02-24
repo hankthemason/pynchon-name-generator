@@ -32,7 +32,7 @@ function App() {
     showPronounsError: false,
     description: '',
     descriptionClicked: false,
-
+    userInputPronouns: '',
   })
 
   //On page render, fetch all character names, nicknames, and prefixes (nameData)
@@ -64,6 +64,7 @@ function App() {
           pronounsHidden: true,
           userPronouns: null,
           description: '',
+          userInputPronouns: '',
         })
       }
     }

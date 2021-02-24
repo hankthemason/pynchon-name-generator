@@ -11,6 +11,7 @@ interface PageState {
   showPronounsError: boolean;
   description: string;
   descriptionClicked: boolean;
+  userInputPronouns: string;
 }
 
 interface CharacterName {

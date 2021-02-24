@@ -4,8 +4,7 @@ import { GetPronouns } from './GetPronouns'
 
 export const GetDescription = ({pageState, setPageState}: GetDescriptionProps) => {
   
-  let { descriptionButtonHidden, pronounsHidden, descriptionHidden } = pageState
-  let [pronounsInput, setpronounsInput] = useState<string>('')
+  let { descriptionButtonHidden, pronounsHidden, userInputPronouns} = pageState
   
   return (
     <div>
@@ -33,19 +32,22 @@ export const GetDescription = ({pageState, setPageState}: GetDescriptionProps) =
             <input
               id="pronounsInput" 
               type="text" 
-              value={pronounsInput} 
-              onChange={e => {setpronounsInput(e.target.value)}}
+              value={userInputPronouns} 
+              onChange={e => {setPageState({
+                ...pageState,
+                userInputPronouns: e.target.value
+              })}}
               placeholder={"your pronouns"}
             />
             <button
               type="submit"
-              value={pronounsInput}
+              value={userInputPronouns}
               onClick={e => {
                 e.preventDefault()
-                if (ValidatePronouns(pronounsInput)) {
+                if (ValidatePronouns(userInputPronouns)) {
                   setPageState({
                     ...pageState,
-                    userPronouns: GetPronouns(pronounsInput),
+                    userPronouns: GetPronouns(userInputPronouns),
                     descriptionHidden: false,
                     descriptionClicked: true
                   })
