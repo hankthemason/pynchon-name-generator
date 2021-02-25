@@ -7,6 +7,7 @@ export const ValidateName = (form: string) => {
 }
 
 export const ValidatePronouns = (form: string) => {
+  if (form === '') return false
   let reg = /^[a-zA-Z\/]*$/;
 
   return reg.test(form)

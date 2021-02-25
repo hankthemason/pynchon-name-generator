@@ -76,6 +76,7 @@ function App() {
     if (descriptionData && pageState.userPronouns && pageState.descriptionClicked === true) {
       setPageState({
         ...pageState,
+        showPronounsError: false,
         description: generateDescription(pageState.result, pageState.userPronouns, descriptionData),
         descriptionClicked: false
       })

@@ -140,7 +140,7 @@ const conjugateHave = (pronouns: PronounsObj): string => {
 const getSecondSentence = (pronouns: PronounsObj): string => {
   const sentences: string[] = []
   sentences[0] = `Since childhood ${pronouns.subjective} repaired the wall surrounding ${pronouns.possessive} desert home, mortared, carried heavy stone heavy as ${pronouns.subjective}, lifted, set in place.  Still the desert came.`
-  sentences[1] = `${capitalizeFirstChar(pronouns.possessive)} demeanor was ${getRandom(demeanors)[0]}, ${pronouns.possessive} partner a connoisseur of ${getRandom(connoisseurOf)[0]}, ${pronouns.possessive} name an hommage to a distant relative who innovated designs for ${getRandom(designsFor)[0]}.`
+  sentences[1] = `${capitalizeFirstChar(pronouns.possessive)} demeanor was ${getRandom(demeanors)[0]}, ${pronouns.possessive} companion a connoisseur of ${getRandom(connoisseurOf)[0]}, ${pronouns.possessive} name an hommage to a distant relative who innovated designs for ${getRandom(designsFor)[0]}.`
   let occ = getRandom(secondaryOccupations, 2)
   let trait = getRandom(personalityTraits)[0]
   sentences[2] = `Born to ${getArticle(occ[0])} and ${getArticle(trait)} ${occ[1]}, ${pronouns.subjective} excelled from an early age in the subtle art of ${getRandom(subtleArts)[0]}.`
