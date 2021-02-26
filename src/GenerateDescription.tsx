@@ -137,6 +137,10 @@ const conjugateHave = (pronouns: PronounsObj): string => {
   return pronouns.subjective === 'he' || pronouns.subjective === 'she' ? `${pronouns.subjective} has` : `${pronouns.subjective} have`
 }
 
+const conjugateisPast = (pronouns: PronounsObj): string => {
+  return pronouns.subjective === 'he' || pronouns.subjective === 'she' ? `${pronouns.subjective} was` : `${pronouns.subjective} were`
+}
+
 const getSecondSentence = (pronouns: PronounsObj): string => {
   const sentences: string[] = []
   sentences[0] = `Since childhood ${pronouns.subjective} repaired the wall surrounding ${pronouns.possessive} desert home, mortared, carried heavy stone heavy as ${pronouns.subjective}, lifted, set in place.  Still the desert came.`
@@ -147,7 +151,7 @@ const getSecondSentence = (pronouns: PronounsObj): string => {
   sentences[3] = `Convicted for ${getRandom(convictedFor)[0]} at a young age, ${pronouns.subjective} subsequently turned to ${getRandom(connoisseurOf)[0]} as new target for ${pronouns.possessive} seemingly inexhaustible energies.`
   sentences[4] = `${capitalizeFirstChar(pronouns.subjective)} ran with a crew called ${getRandom(crews)[0]} who were known for ${getRandom(convictedFor)[0]} and controlled territory ${getRandom(territories)[0]}.`
   sentences[5] = `Like most violent young people - and not a few stuffy old ones - ${pronouns.subjective} found the idea of defeat hateful, and so devoted ${pronouns.objective}self to becoming a world-renowned master practitioner in ${pronouns.possessive} chosen field of ${getRandom(subtleArts)[0]}.`
-  sentences[6] = `${capitalizeFirstChar(pronouns.subjective)} was a Catholic; had been to a convent school near ${pronouns.possessive} home.  ${capitalizeFirstChar(pronouns.subjective)} talked overmuch about ${pronouns.possessive} religion, and had indeed for a time considered the Son of God as a young person will consider any eligible bachelor.`
+  sentences[6] = `${capitalizeFirstChar(pronouns.subjective)} ${conjugateisPast(pronouns)} a Catholic; had been to a convent school near ${pronouns.possessive} home.  ${capitalizeFirstChar(pronouns.subjective)} talked overmuch about ${pronouns.possessive} religion, and had indeed for a time considered the Son of God as a young person will consider any eligible bachelor.`
   sentences[7] = `${capitalizeFirstChar(pronouns.possessive)} life's progress had been inevitably east; having somehow escaped the hothouse of ${pronouns.possessive} fellow countrymen ${pronouns.subjective} flew to the other extreme and developed an obsession with ancestral roots.  Land of God.  Land of suffering, also.  Scenes of specific persecution upset ${pronouns.objective}.`
   sentences[8] = `After emigrating to Germany, ${pronouns.subjective} became for a time the Weimar Republic’s most notorious cat burglar and doper, but after a period of success and notoriety fell into a dull life of petty crime and minor scandals.`
   sentences[9] = `${capitalizeFirstChar(pronouns.subjective)} spoke 33 languages including English with a strong Oxonian blither to it.`
