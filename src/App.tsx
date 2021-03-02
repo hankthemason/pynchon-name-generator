@@ -17,7 +17,6 @@ function App() {
   let generateDescription = GenerateDescription;
   
   const [nameData, setNameData] = useState<NameData>()
-  const [descriptionData, setDescriptionData] = useState('yo')
 
   const [pageState, setPageState] = useState<PageState>({
     userName: '',
@@ -73,11 +72,11 @@ function App() {
 
   //generate description
   useEffect(() => {
-    if (descriptionData && pageState.userPronouns && pageState.descriptionClicked === true) {
+    if (pageState.userPronouns && pageState.descriptionClicked === true) {
       setPageState({
         ...pageState,
         showPronounsError: false,
-        description: generateDescription(pageState.result, pageState.userPronouns, descriptionData),
+        description: generateDescription(pageState.result, pageState.userPronouns),
         descriptionClicked: false
       })
     }

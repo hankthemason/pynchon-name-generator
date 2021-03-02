@@ -168,7 +168,7 @@ const getSecondSentence = (pronouns: PronounsObj): string => {
   return getRandom(sentences)[0]
 }
 
-export const GenerateDescription = (name: string, pronouns: PronounsObj, data: any):string => {
+export const GenerateDescription = (name: string, pronouns: PronounsObj):string => {
 
   const descType: keyof Descriptor = (Object.keys(descriptors) as Array<keyof Descriptor>)[Math.floor(Math.random() * 2)]
 
