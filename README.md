@@ -25,7 +25,7 @@ Although this project was built primary for personal and educational purposes, s
 
 ## Data source
 
-Some people have asked what the sources of data were for the names and descriptions used in this project.  Unfortunately, at the time of building this project, there was no comprehensive list of Thomas Pynchon character names that I was aware of.  The names and descriptions were compiled manually, stored in .csv files, and read into the app through scripts.  
+Some people have asked what the sources of data were for the names and descriptions used in this project.  Unfortunately, at the time of building this project, there was no comprehensive list of Thomas Pynchon character names that I was aware of.  The names and descriptions were compiled manually, stored in .csv files (see `/data`), and read into the app through a script (`csvReader.js`)  
 
 ## Built With
 
